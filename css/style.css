@@ -1,0 +1,23 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+main{
+    padding: 4rem;
+    margin: 1em;
+    
+}
+
+#lista-filmes{
+    display:flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    padding: 2rem;
+}
+
+
+footer{
+    padding: 2rem;
+    background-color: rgb(172, 166, 166);
+}
