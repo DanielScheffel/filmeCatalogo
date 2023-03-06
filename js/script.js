@@ -1,3 +1,1 @@
-let diretor = new Diretor(1, "MICHAEL BAY");
-
-console.log(diretor);
+fetch = ('http://www.omdbapi.com/?i=tt3896198&apikey=4b8fb6ce');
