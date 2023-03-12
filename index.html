@@ -15,7 +15,7 @@
     
     <header>
 
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #A9A9A9;">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
             <img src="./img/logo.png" width="70px" all="CATALOGO FILMES">
@@ -46,8 +46,8 @@
               </li>
             </ul>
             <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Buscar Filmes" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Buscar</button>
+              <input class="form-control me-2" id="input-buscar-filme" type="search" placeholder="Buscar Filmes" aria-label="Search">
+              <button class="btn btn-outline-light" id="btn-buscar-filme" type="submit">Buscar</button>
             </form>
           </div>
         </div>
@@ -59,7 +59,7 @@
     <main>
 
        <div id="lista-filmes">
-          <div class="card" style="width: 14rem;">
+         <!-- <div class="card" style="width: 14rem;">
             <img src="./img/transformes.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Transfomes</h5>
@@ -135,7 +135,7 @@
               </div>
               <a href="#" class="btn btn-primary">Detalhes</a>
             </div>
-          </div>
+          </div> -->
        </div>
 
        <div id="mostrar-filmes"></div>
