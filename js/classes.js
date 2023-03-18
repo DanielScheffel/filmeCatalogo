@@ -26,6 +26,7 @@ class Filme{
         this.elenco = elenco;
         this.classificacao = classificacao;
         this.avaliacao = avaliacao;
+        this.btnDetalhes = null;
     }
 
     getCard = async () => {
@@ -39,7 +40,7 @@ class Filme{
         let hCardTitle = document.createElement("h5");
         hCardTitle.setAttribute("class", "card-title");
         let divDetalhes = document.createElement("div");
-        divDetalhes.setAttribute("style", "display: flex; justify-content: space-around;");
+        divDetalhes.setAttribute("style", "display: flex; justify-content: space-around; text-align: center; font-weight: 700;");
         let divGenero = document.createElement("div");
         divGenero.setAttribute("style", "flex-grow:1;");
         let divAnoProducao = document.createElement("div");
@@ -57,7 +58,21 @@ class Filme{
         card.appendChild(cardBody);
         cardBody.appendChild(hCardTitle);
         cardBody.appendChild(divDetalhes);
+
+        this.setBtnDetalhes();
+        cardBody.appendChild(this.getBtnDetalhes());
     
         return card;
+    }
+
+    getBtnDetalhes = () => {
+        return this.btnDetalhes
+    }
+
+    setBtnDetalhes = () => {
+        this.btnDetalhes = document.createElement('button');
+        this.btnDetalhes.appendChild(document.createTextNode("Detalhes"));
+        this.btnDetalhes.setAttribute("id", this.id);
+        this.btnDetalhes.setAttribute("class", "btnDetalhesFilme");
     }
 }
