@@ -49,16 +49,21 @@ let detalhesFilme = async (id) => {
             resp.Awards,
             resp.imdbRating
         )
-        console.log(filme);
-    })
+        document.querySelector("#mostrar-filmes").appendChild(filme.getDetalhesFilme());
+        document.querySelector("#lista-filmes").style.display = "none";
+        document.querySelector("#mostrar-filmes").style.display = "flex";
+    });
 }
 
 let listarFilmes = async (filmes) => {
     let listaFilmes = await document.querySelector("#lista-filmes");
+    listaFilmes.style.display = "flex";
     listaFilmes.innerHTML = "";
-    //console.log(listaFilmes);
+    document.querySelector("#mostrar-filmes").innerhtml = "";
+    document.querySelector("#mostrar-filmes").style.display = "none";
     if(filmes.length > 0){
         filmes.forEach(async(filme) => {
+            console.log(filme);
             listaFilmes.appendChild(await filme.getCard());
             filme.getBtnDetalhes().onclick = () => {
                 detalhesFilme(filme.id);
