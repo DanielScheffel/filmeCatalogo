@@ -13,7 +13,7 @@ btnBuscarFilme.onclick = () => {
                     item.imdbID,
                     item.Title,
                     item.Year,
-                    null,
+                    item.Type,
                     null,
                     null,
                     item.Poster,
@@ -40,18 +40,20 @@ let detalhesFilme = async (id) => {
             resp.imdbID,
             resp.Title,
             resp.Year,
-            resp.Genre.split(","),
+            resp.Genre.split(", "),
             resp.Runtime,
             resp.plot,
             resp.Poster,
             resp.Director,
-            resp.Actors.split(","),
+            resp.Actors.split(", "),
             resp.Awards,
             resp.imdbRating
         )
+
         document.querySelector("#mostrar-filmes").appendChild(filme.getDetalhesFilme());
-        document.querySelector("#lista-filmes").style.display = "none";
-        document.querySelector("#mostrar-filmes").style.display = "flex";
+        document.querySelector("#lista-filmes").style.display = "flex";
+        document.querySelector("#mostrar-filmes").style.display = "none";
+
     });
 }
 

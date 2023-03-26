@@ -4,21 +4,32 @@
     font-family:Arial, Helvetica, sans-serif;
 }
 
+body{
+    background-color: #B0E0E6;
+}
+
+img.card-img-topz{
+    height: 250px;
+    height: 370px;
+}
 
 #lista-filmes{
     display:flex;
-    justify-content: start;
+    justify-content: center;
     flex-wrap: wrap;
-    padding: 1.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
 }
 
 .card{
-    margin: 1.5em;
-    border: 2px solid #00FFFF;
+    width: 14rem;
+    margin: 1rem;
+    background-color: #87CEFA;
+    border: 1px solid #0000FF;
 }
 
 .card:hover{
-    background-color: #E0FFFF;
+    background-color: #4169E1;
 }
 
 .card-title{
@@ -27,16 +38,12 @@
     color: #000000;
 }
 
-.card-img-topz{
-    width: 100%;
-}
-
 .btnDetalhesFilme{
     width: 120px;
     border-radius: 10px;
     padding: 8px;
-    margin: 12px;
-    margin-left: 25%;
+    margin: 8px;
+    margin-left: 20%;
     background-color: #ADD8E6;
     font-weight: 600;
     color: #6A5ACD;
@@ -45,9 +52,4 @@
 .btnDetalhesFilme:hover{
     background-color: #87CEFA;
     color: #0000FF;
-}
-
-footer{
-    padding: 1.5rem;
-    background-color: #000080;
 }
