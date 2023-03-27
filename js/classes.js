@@ -94,10 +94,46 @@ class Filme{
 
     getDetalhesFilme = async () => {
 
-        let cardDetalhe = document.createElement("div");
-        cardDetalhe.setAttribute("class", "cardDetalhes");
+        let cardDetalhes = document.createElement("div");
+        cardDetalhes.setAttribute("class", "card mb-3");
+        cardDetalhes.setAttribute("style", "max-width: 540px;");
 
-        
+        let cardimgDetalhes = document.createElement("div");
+        cardimgDetalhes.setAttribute("class", "row g-0");
+
+        let divImg = document.createElement("div");
+        divImg.setAttribute("class", "col-md-4");
+        divImg.setAttribute("src", this.cartaz);
+
+        let divDetalhes = document.createElement("div");
+        divDetalhes.setAttribute("class", "col-md-8");
+
+        let cardBodyDetalhes = document.createElement("div");
+        cardBodyDetalhes.setAttribute("class", "card-body");
+
+        let htitleDetalhes = document.createElement("h5");
+        htitleDetalhes.setAttribute("class", "card-title-detalhes");
+
+        let divAnoProducao = document.createElement("div");
+        divAnoProducao.setAttribute("style", "flex-grow: 1;");
+
+        let divDuracao = document.createElement("div");
+        divDuracao.setAttribute("style", "flex-grow: 1;");
+
+        let divGenero = document.createElement("div");
+        divGenero.setAttribute("style", "flex-grow: 1;");
+
+        let divDirecao = document.createElement("div");
+        divDirecao.setAttribute("style", "flex-grow: 1;");
+
+        let divElenco = document.createElement("div");
+        divElenco.setAttribute("style", "flex-grow: 1;");
+
+        let divSinopse = document.createElement("div");
+        divSinopse.setAttribute("class", "sinopse");
+
+
+        return cardDetalhes;
 
     }
 }

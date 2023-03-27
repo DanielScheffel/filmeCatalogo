@@ -50,7 +50,7 @@ let detalhesFilme = async (id) => {
             resp.imdbRating
         )
 
-        document.querySelector("#mostrar-filmes").appendChild(filme.getDetalhesFilme());
+       document.querySelector("#mostrar-filmes").appendChild(filme.getDetalhesFilme());
         document.querySelector("#lista-filmes").style.display = "flex";
         document.querySelector("#mostrar-filmes").style.display = "none";
 
@@ -62,12 +62,12 @@ let listarFilmes = async (filmes) => {
     listaFilmes.style.display = "flex";
     listaFilmes.innerHTML = "";
     document.querySelector("#mostrar-filmes").innerhtml = "";
-    document.querySelector("#mostrar-filmes").style.display = "none";
     if(filmes.length > 0){
         filmes.forEach(async(filme) => {
             console.log(filme);
             listaFilmes.appendChild(await filme.getCard());
             filme.getBtnDetalhes().onclick = () => {
+                listarFilmes.style.display = "none";
                 detalhesFilme(filme.id);
             }
         });
