@@ -92,46 +92,67 @@ class Filme{
 
     }
 
-    getDetalhesFilme = async () => {
+    getDetalhesFilme =  () => {
 
-        let cardDetalhes = document.createElement("div");
-        cardDetalhes.setAttribute("class", "card mb-3");
-        cardDetalhes.setAttribute("style", "max-width: 540px;");
+        let cardDetalhes = document.createElement('div');
+        cardDetalhes.setAttribute("class", "card-detalhes");
 
-        let cardimgDetalhes = document.createElement("div");
-        cardimgDetalhes.setAttribute("class", "row g-0");
-
-        let divImg = document.createElement("div");
-        divImg.setAttribute("class", "col-md-4");
-        divImg.setAttribute("src", this.cartaz);
-
-        let divDetalhes = document.createElement("div");
-        divDetalhes.setAttribute("class", "col-md-8");
+        let imgDetalhes = document.createElement("img");
+        imgDetalhes.setAttribute("class", "img-detalhes");
+        imgDetalhes.setAttribute("src", this.cartaz);
 
         let cardBodyDetalhes = document.createElement("div");
-        cardBodyDetalhes.setAttribute("class", "card-body");
+        cardBodyDetalhes.setAttribute("class", "body-detalhes");
 
-        let htitleDetalhes = document.createElement("h5");
-        htitleDetalhes.setAttribute("class", "card-title-detalhes");
+        let hTitleDetalhes = document.createElement("h5");
+        hTitleDetalhes.setAttribute("class", "card-title");
+        hTitleDetalhes.appendChild(document.createTextNode(this.titulo));
 
-        let divAnoProducao = document.createElement("div");
-        divAnoProducao.setAttribute("style", "flex-grow: 1;");
+        let divDetalhes = document.createElement("div");
+        divDetalhes.setAttribute("class", "div-detalhes");
 
-        let divDuracao = document.createElement("div");
-        divDuracao.setAttribute("style", "flex-grow: 1;");
+        let divAno = document.createElement("div");
+        divAno.setAttribute("class", "div-ano");
 
         let divGenero = document.createElement("div");
-        divGenero.setAttribute("style", "flex-grow: 1;");
+        divGenero.setAttribute("class", "div-genero");
+
+        let divDuracao = document.createElement("div");
+        divDuracao.setAttribute("class", "div-duracao");
 
         let divDirecao = document.createElement("div");
-        divDirecao.setAttribute("style", "flex-grow: 1;");
+        divDirecao.setAttribute("class", "div-direcao");
 
         let divElenco = document.createElement("div");
-        divElenco.setAttribute("style", "flex-grow: 1;");
+        divElenco.setAttribute("class", "div-elenco");
+
+        let divAvaliacao = document.createElement("div");
+        divAvaliacao.setAttribute("class", "div-avaliacao");
 
         let divSinopse = document.createElement("div");
-        divSinopse.setAttribute("class", "sinopse");
+        divSinopse.setAttribute("class", "div-sinopse");
 
+        divAno.appendChild(document.createTextNode(this.ano));
+        divGenero.appendChild(document.createTextNode(this.genero));
+        divDuracao.appendChild(document.createTextNode(this.duracao));
+        divDirecao.appendChild(document.createTextNode(this.direcao));
+        divElenco.appendChild(document.createTextNode(this.elenco));
+        divAvaliacao.appendChild(document.createTextNode(this.avaliacao));
+        divSinopse.appendChild(document.createTextNode(this.sinopse));
+
+        divDetalhes.appendChild(divAno);
+        divDetalhes.appendChild(divGenero);
+        divDetalhes.appendChild(divDuracao);
+        divDetalhes.appendChild(divDirecao);
+        divDetalhes.appendChild(divElenco);
+        divDetalhes.appendChild(divAvaliacao);
+        divDetalhes.appendChild(divSinopse);
+
+        cardDetalhes.appendChild(imgDetalhes);
+        cardDetalhes.appendChild(cardBodyDetalhes);
+
+        cardBodyDetalhes.appendChild(hTitleDetalhes);
+        cardBodyDetalhes.appendChild(divDetalhes);
 
         return cardDetalhes;
 

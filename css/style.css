@@ -8,6 +8,9 @@ body{
     background-color: #B0E0E6;
 }
 
+
+/* Card Filmes */
+
 img.card-img-topz{
     height: 250px;
     height: 370px;
@@ -38,6 +41,8 @@ img.card-img-topz{
     color: #000000;
 }
 
+
+/* Button Detalhes */
 .btnDetalhesFilme{
     width: 120px;
     border-radius: 10px;
@@ -52,4 +57,17 @@ img.card-img-topz{
 .btnDetalhesFilme:hover{
     background-color: #87CEFA;
     color: #0000FF;
+}
+
+/* Card Detalhes Filmes */
+
+img.img-detalhes{
+    height: 250px;
+    height: 370px;
+}
+
+.card-detalhes{
+    display: flex;
+    justify-content: space-around;
+    padding: 8rem;
 }
