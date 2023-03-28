@@ -62,12 +62,19 @@ img.card-img-topz{
 /* Card Detalhes Filmes */
 
 img.img-detalhes{
-    height: 250px;
-    height: 370px;
+    height: 320px;
+    height: 440px;
+    padding: 1rem;
+    border-radius: 35px;
 }
 
 .card-detalhes{
     display: flex;
     justify-content: space-around;
-    padding: 8rem;
+    width: 860px;
+    height: 450px;
+    margin: 6em;
+    margin-left: 18rem;
+    border: 1px solid #0000FF;
+    border-radius: 12px;
 }
