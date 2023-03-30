@@ -1,19 +1,20 @@
-let inputBuscarFilme = document.querySelector("#input-buscar-filme");
-let btnBuscarFilme = document.querySelector("#btn-buscar-filme");
+const inputBuscarFilme = document.querySelector("#input-buscar-filme");
+const btnBuscarFilme = document.querySelector("#btn-buscar-filme");
 
 const listaFilmes = document.querySelector("#lista-filmes");
 const mostrarFilmes = document.querySelector("#mostrar-filmes");
 
 
+
 btnBuscarFilme.onclick = () => {
     if(inputBuscarFilme.value.length > 0){
-        let filmes = new Array();
+        const filmes = new Array();
         fetch("http://www.omdbapi.com/?apikey=4b8fb6ce&s="+inputBuscarFilme.value, {mode: "cors"})
         .then((resp) => resp.json())
         .then((resp) => {
             resp.Search.forEach(item => {
                 console.log(item);
-                let filme = new Filme(
+                const filme = new Filme(
                     item.imdbID,
                     item.Title,
                     item.Year,
@@ -36,12 +37,12 @@ btnBuscarFilme.onclick = () => {
     return false;
 }
 
-let detalhesFilme = async (id) => {
+const detalhesFilme = async (id) => {
     fetch("http://www.omdbapi.com/?apikey=4b8fb6ce&i="+id)
     .then((resp) => resp.json())
     .then((resp) => {
         console.log(resp);
-        let filme = new Filme(
+        const filme = new Filme(
             resp.imdbID,
             resp.Title,
             resp.Year,
@@ -58,11 +59,21 @@ let detalhesFilme = async (id) => {
         mostrarFilmes.style.display = "flex";
         mostrarFilmes.appendChild(filme.getDetalhesFilme());
 
+        document.querySelector("#fecharDetalhes").onclick = () => {
+            document.querySelector("#lista-filmes").style.display = "flex";
+            document.querySelector("#mostrar-filmes").innerHTML = "";
+            document.querySelector("#mostrar-filmes").style.display = "none";
+        }
+
+        /*document.querySelector("#salvarDetalhes").onclick = () => {
+            salvarDetalhes(filme);
+        }*/
+    
     });
 }
 
-let listarFilmes = async (filmes) => {
-    let listaFilmes = await document.querySelector("#lista-filmes");
+const listarFilmes = async (filmes) => {
+    const listaFilmes = await document.querySelector("#lista-filmes");
     listaFilmes.style.display = "flex";
     listaFilmes.innerHTML = "";
     document.querySelector("#mostrar-filmes").innerhtml = "";
@@ -75,5 +86,7 @@ let listarFilmes = async (filmes) => {
                 detalhesFilme(filme.id);
             }
         });
+
     }
+
 }

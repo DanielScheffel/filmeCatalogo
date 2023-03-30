@@ -73,8 +73,74 @@ img.img-detalhes{
     justify-content: space-around;
     width: 860px;
     height: 450px;
-    margin: 6em;
+    margin: 3em;
     margin-left: 18rem;
     border: 1px solid #0000FF;
     border-radius: 12px;
+}
+
+.cabecalho{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.cardTitle{
+    font-size: 35px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.div-ano{
+    font-size: 18px;
+    font-weight: 600;
+    padding: 2px;
+}
+
+.div-genero{
+    font-size: 18px;
+    font-weight: 600;
+    padding: 2px;
+}
+
+.div-duracao{
+    font-size: 18px;
+    font-weight: 600;
+    padding: 2px;
+}
+
+.div-direcao{
+    font-size: 18px;
+    font-weight: 600;
+    padding: 2px;
+}
+
+.div-elenco{
+    font-size: 18px;
+    font-weight: 600;
+    padding: 2px;
+}
+
+.div-sinopse{
+    font-size: 18px;
+    font-weight: 600;
+    padding: 2px;
+    margin-right: 2px;
+}
+
+.div-avaliacao{
+    font-size: 18px;
+    font-weight: 600;
+    padding: 2px;
+}
+
+#salvarDetalhes{
+    width: 120px;
+    border-radius: 10px;
+    padding: 12px;
+    margin: 8px;
+    margin-left: 20%;
+    background-color: #ADD8E6;
+    font-weight: 600;
+    color: #6A5ACD;
 }

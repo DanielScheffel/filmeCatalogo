@@ -104,34 +104,52 @@ class Filme{
         const cardBodyDetalhes = document.createElement("div");
         cardBodyDetalhes.setAttribute("class", "body-detalhes");
 
+        const divCabecalho = document.createElement("div");
+        divCabecalho.setAttribute("class", "cabecalho");
+
         const hTitleDetalhes = document.createElement("h2");
         hTitleDetalhes.setAttribute("class", "cardTitle");
         hTitleDetalhes.appendChild(document.createTextNode(this.titulo));
+
+        const fecharFilme = document.createElement('button');
+        fecharFilme.setAttribute("class", "btn-close");
+        fecharFilme.setAttribute("id", this.id);
+        fecharFilme.setAttribute("id", "fecharDetalhes");
 
         const divDetalhes = document.createElement("div");
         divDetalhes.setAttribute("class", "div-detalhes");
 
         const divAno = document.createElement("div");
         divAno.setAttribute("class", "div-ano");
-        divAno.appendChild(document.createTextNode("Ano: "));
+        divAno.appendChild(document.createTextNode("• Ano: "));
 
         const divGenero = document.createElement("div");
         divGenero.setAttribute("class", "div-genero");
+        divGenero.appendChild(document.createTextNode("• Genêro: "));
 
         const divDuracao = document.createElement("div");
         divDuracao.setAttribute("class", "div-duracao");
+        divDuracao.appendChild(document.createTextNode("• Duração: "));
 
         const divDirecao = document.createElement("div");
         divDirecao.setAttribute("class", "div-direcao");
+        divDirecao.appendChild(document.createTextNode("• Direção: "));
 
         const divElenco = document.createElement("div");
         divElenco.setAttribute("class", "div-elenco");
+        divElenco.appendChild(document.createTextNode("• Elenco: "));
 
         const divSinopse = document.createElement("div");
         divSinopse.setAttribute("class", "div-sinopse");
+        divSinopse.appendChild(document.createTextNode("• Sinopse: "));
 
         const divAvaliacao = document.createElement("div");
         divAvaliacao.setAttribute("class", "div-avaliacao");
+        divAvaliacao.appendChild(document.createTextNode("• Avaliação: "));
+
+        /*const salvarFilme = document.createElement('button');
+        salvarFilme.setAttribute("id", "salvarDetalhes");
+        salvarFilme.appendChild(document.createTextNode('Salvar'));*/
 
         divAno.appendChild(document.createTextNode(this.ano));
         divGenero.appendChild(document.createTextNode(this.genero));
@@ -148,14 +166,21 @@ class Filme{
         divDetalhes.appendChild(divElenco);
         divDetalhes.appendChild(divSinopse);
         divDetalhes.appendChild(divAvaliacao);
+        //divDetalhes.appendChild(salvarFilme);
 
         cardDetalhes.appendChild(imgDetalhes);
         cardDetalhes.appendChild(cardBodyDetalhes);
 
-        cardBodyDetalhes.appendChild(hTitleDetalhes);
+        divCabecalho.appendChild(hTitleDetalhes);
+        divCabecalho.appendChild(fecharFilme);
+
+        cardBodyDetalhes.appendChild(divCabecalho);
         cardBodyDetalhes.appendChild(divDetalhes);
+
 
         return cardDetalhes;
 
     }
+
+
 }
