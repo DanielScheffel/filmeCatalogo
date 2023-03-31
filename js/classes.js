@@ -111,6 +111,10 @@ class Filme{
         hTitleDetalhes.setAttribute("class", "cardTitle");
         hTitleDetalhes.appendChild(document.createTextNode(this.titulo));
 
+        const salvarFilme = document.createElement('i');
+        salvarFilme.setAttribute("class", "bi bi-star");
+        salvarFilme.setAttribute("id", "salvarDetalhes");
+
         const fecharFilme = document.createElement('button');
         fecharFilme.setAttribute("class", "btn-close");
         fecharFilme.setAttribute("id", this.id);
@@ -147,10 +151,6 @@ class Filme{
         divAvaliacao.setAttribute("class", "div-avaliacao");
         divAvaliacao.appendChild(document.createTextNode("• Avaliação: "));
 
-        /*const salvarFilme = document.createElement('button');
-        salvarFilme.setAttribute("id", "salvarDetalhes");
-        salvarFilme.appendChild(document.createTextNode('Salvar'));*/
-
         divAno.appendChild(document.createTextNode(this.ano));
         divGenero.appendChild(document.createTextNode(this.genero));
         divDuracao.appendChild(document.createTextNode(this.duracao));
@@ -166,12 +166,12 @@ class Filme{
         divDetalhes.appendChild(divElenco);
         divDetalhes.appendChild(divSinopse);
         divDetalhes.appendChild(divAvaliacao);
-        //divDetalhes.appendChild(salvarFilme);
 
         cardDetalhes.appendChild(imgDetalhes);
         cardDetalhes.appendChild(cardBodyDetalhes);
 
         divCabecalho.appendChild(hTitleDetalhes);
+        divCabecalho.appendChild(salvarFilme);
         divCabecalho.appendChild(fecharFilme);
 
         cardBodyDetalhes.appendChild(divCabecalho);

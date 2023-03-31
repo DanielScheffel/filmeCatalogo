@@ -134,13 +134,6 @@ img.img-detalhes{
     padding: 2px;
 }
 
-#salvarDetalhes{
-    width: 120px;
-    border-radius: 10px;
-    padding: 12px;
-    margin: 8px;
-    margin-left: 20%;
-    background-color: #ADD8E6;
-    font-weight: 600;
-    color: #6A5ACD;
+#salvarFilme{
+    padding: 1rem;
 }
