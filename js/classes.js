@@ -111,10 +111,6 @@ class Filme{
         hTitleDetalhes.setAttribute("class", "cardTitle");
         hTitleDetalhes.appendChild(document.createTextNode(this.titulo));
 
-        const salvarFilme = document.createElement('i');
-        salvarFilme.setAttribute("class", "bi bi-star");
-        salvarFilme.setAttribute("id", "salvarDetalhes");
-
         const fecharFilme = document.createElement('button');
         fecharFilme.setAttribute("class", "btn-close");
         fecharFilme.setAttribute("id", this.id);
@@ -124,32 +120,36 @@ class Filme{
         divDetalhes.setAttribute("class", "div-detalhes");
 
         const divAno = document.createElement("div");
-        divAno.setAttribute("class", "div-ano");
         divAno.appendChild(document.createTextNode("• Ano: "));
 
         const divGenero = document.createElement("div");
-        divGenero.setAttribute("class", "div-genero");
+
         divGenero.appendChild(document.createTextNode("• Genêro: "));
 
         const divDuracao = document.createElement("div");
-        divDuracao.setAttribute("class", "div-duracao");
+
         divDuracao.appendChild(document.createTextNode("• Duração: "));
 
         const divDirecao = document.createElement("div");
-        divDirecao.setAttribute("class", "div-direcao");
+  
         divDirecao.appendChild(document.createTextNode("• Direção: "));
 
         const divElenco = document.createElement("div");
-        divElenco.setAttribute("class", "div-elenco");
+
         divElenco.appendChild(document.createTextNode("• Elenco: "));
 
         const divSinopse = document.createElement("div");
-        divSinopse.setAttribute("class", "div-sinopse");
+
         divSinopse.appendChild(document.createTextNode("• Sinopse: "));
 
         const divAvaliacao = document.createElement("div");
-        divAvaliacao.setAttribute("class", "div-avaliacao");
+
         divAvaliacao.appendChild(document.createTextNode("• Avaliação: "));
+
+        const btnFavorito = document.createElement("button");
+        btnFavorito.setAttribute("class", "btnFilmeFavorito");
+        btnFavorito.setAttribute("id", "btnFilmeFavorito");
+        btnFavorito.appendChild(document.createTextNode("Favorito"));
 
         divAno.appendChild(document.createTextNode(this.ano));
         divGenero.appendChild(document.createTextNode(this.genero));
@@ -166,12 +166,12 @@ class Filme{
         divDetalhes.appendChild(divElenco);
         divDetalhes.appendChild(divSinopse);
         divDetalhes.appendChild(divAvaliacao);
+        divDetalhes.appendChild(btnFavorito);
 
         cardDetalhes.appendChild(imgDetalhes);
         cardDetalhes.appendChild(cardBodyDetalhes);
 
         divCabecalho.appendChild(hTitleDetalhes);
-        divCabecalho.appendChild(salvarFilme);
         divCabecalho.appendChild(fecharFilme);
 
         cardBodyDetalhes.appendChild(divCabecalho);

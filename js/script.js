@@ -3,6 +3,8 @@ const btnBuscarFilme = document.querySelector("#btn-buscar-filme");
 
 const listaFilmes = document.querySelector("#lista-filmes");
 const mostrarFilmes = document.querySelector("#mostrar-filmes");
+const navFavoritos = document.querySelector("#nav-favoritos");
+const filmeFavorito = document.querySelector("#btnFilmeFavorito")
 
 
 
@@ -65,15 +67,15 @@ const detalhesFilme = async (id) => {
             document.querySelector("#mostrar-filmes").style.display = "none";
         }
 
-        /*document.querySelector("#salvarDetalhes").onclick = () => {
-            salvarDetalhes(filme);
-        }*/
+        document.querySelector("#btnFilmeFavorito").onclick = () => {
+            filmeFavorito(filme);
+        }
     
     });
 }
 
 const listarFilmes = async (filmes) => {
-    const listaFilmes = await document.querySelector("#lista-filmes");
+    const listaFilmes = document.querySelector("#lista-filmes");
     listaFilmes.style.display = "flex";
     listaFilmes.innerHTML = "";
     document.querySelector("#mostrar-filmes").innerhtml = "";
@@ -87,6 +89,46 @@ const listarFilmes = async (filmes) => {
             }
         });
 
+
     }
 
+}
+
+
+const filmesFavorito = () => {
+    let filmesString = localStorage.getItem('filmesFavoritos');
+    let filmes = JSON.parse(filmesString);
+
+    filmes = JSON.stringify(filmes);
+
+    localStorage.setItem('filmesFavoritos');
+
+    console.log(filmes);
+}
+
+navFavoritos.onclick = () => {
+    listarFavoritos();
+}
+
+const listarFavoritos = () => {
+    let filmesFavoritos = localStorage.getItem('filmesFavoritos');
+    filmesFavoritos = JSON.parse(filmesFavoritos);
+    const filmes = new Array();
+    filmeFavorito.forEach((item) => {
+        const filme = new Filme(
+            item.id,
+            item.titulo,
+            item.ano,
+            item.genero,
+            item.duracao,
+            item.sinopse,
+            item.cartaz,
+            item.direcao,
+            item.elenco,
+            item.classificacao,
+            item.avaliacao
+        );
+        filmes.push(filme);
+    });
+    listarFilmes(filmes);
 }

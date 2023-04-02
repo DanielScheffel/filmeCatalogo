@@ -91,49 +91,27 @@ img.img-detalhes{
     text-align: center;
 }
 
-.div-ano{
-    font-size: 18px;
-    font-weight: 600;
-    padding: 2px;
-}
-
-.div-genero{
-    font-size: 18px;
-    font-weight: 600;
-    padding: 2px;
-}
-
-.div-duracao{
-    font-size: 18px;
-    font-weight: 600;
-    padding: 2px;
-}
-
-.div-direcao{
-    font-size: 18px;
-    font-weight: 600;
-    padding: 2px;
-}
-
-.div-elenco{
-    font-size: 18px;
-    font-weight: 600;
-    padding: 2px;
-}
-
-.div-sinopse{
+.div-detalhes{
     font-size: 18px;
     font-weight: 600;
     padding: 2px;
     margin-right: 2px;
 }
 
-.div-avaliacao{
-    font-size: 18px;
+/* Button Favorito */
+
+.btnFilmeFavorito{
+    width: 90px;
+    border-radius: 10px;
+    padding: 8px;
+    margin: 8px;
+    margin-left: 70%;
+    background-color: #ADD8E6;
     font-weight: 600;
-    padding: 2px;
+    color: #4169E1;
 }
 
-#salvarFilme{
-    padding: 1rem;
+.btnFilmeFavorito:hover{
+    background-color: #87CEFA;
+    color: #0000FF;
 }
