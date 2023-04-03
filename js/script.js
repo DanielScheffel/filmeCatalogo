@@ -68,8 +68,12 @@ const detalhesFilme = async (id) => {
         }
 
         document.querySelector("#btnFilmeFavorito").onclick = () => {
-            filmeFavorito(filme);
+            filmesFavorito(filme);
         }
+
+        //document.querySelector("#btnDesfavoritar").onclick = () => {
+        //    excluirFilme(filme);
+        //}
     
     });
 }
@@ -95,40 +99,48 @@ const listarFilmes = async (filmes) => {
 }
 
 
-const filmesFavorito = () => {
+let filmesFavorito = (filme) => {
+
     let filmesString = localStorage.getItem('filmesFavoritos');
-    let filmes = JSON.parse(filmesString);
+
+    var filmes = JSON.parse(filmesString);
+
+    filmes.push(filme);
 
     filmes = JSON.stringify(filmes);
 
-    localStorage.setItem('filmesFavoritos');
+    localStorage.setItem('filmesFavoritos', filmes);
 
-    console.log(filmes);
+    //console.log(filmes);
+
 }
 
-navFavoritos.onclick = () => {
-    listarFavoritos();
-}
-
-const listarFavoritos = () => {
+let listarFavoritos = () => {
     let filmesFavoritos = localStorage.getItem('filmesFavoritos');
     filmesFavoritos = JSON.parse(filmesFavoritos);
-    const filmes = new Array();
-    filmeFavorito.forEach((item) => {
-        const filme = new Filme(
+    if(filmesFavoritos == null)
+    filmesFavoritos = [];
+    let filmes = new Array();
+    //console.log(filmesFavorito);
+    filmesFavoritos.forEach((item) => {
+        let filme = new Filme(
             item.id,
             item.titulo,
             item.ano,
-            item.genero,
-            item.duracao,
-            item.sinopse,
+            null,
+            null,
+            null,
             item.cartaz,
-            item.direcao,
-            item.elenco,
-            item.classificacao,
-            item.avaliacao
+            null,
+            null,
+            null,
+            null
         );
         filmes.push(filme);
     });
     listarFilmes(filmes);
+}
+
+navFavoritos.onclick = () => {
+    listarFavoritos();
 }

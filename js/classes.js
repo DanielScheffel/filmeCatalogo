@@ -123,33 +123,35 @@ class Filme{
         divAno.appendChild(document.createTextNode("• Ano: "));
 
         const divGenero = document.createElement("div");
-
         divGenero.appendChild(document.createTextNode("• Genêro: "));
 
         const divDuracao = document.createElement("div");
-
         divDuracao.appendChild(document.createTextNode("• Duração: "));
 
         const divDirecao = document.createElement("div");
-  
         divDirecao.appendChild(document.createTextNode("• Direção: "));
 
         const divElenco = document.createElement("div");
-
         divElenco.appendChild(document.createTextNode("• Elenco: "));
 
         const divSinopse = document.createElement("div");
-
         divSinopse.appendChild(document.createTextNode("• Sinopse: "));
 
         const divAvaliacao = document.createElement("div");
-
         divAvaliacao.appendChild(document.createTextNode("• Avaliação: "));
+
+        const divButtons = document.createElement("div");
+        divButtons.setAttribute("class", "divButtons");
 
         const btnFavorito = document.createElement("button");
         btnFavorito.setAttribute("class", "btnFilmeFavorito");
         btnFavorito.setAttribute("id", "btnFilmeFavorito");
         btnFavorito.appendChild(document.createTextNode("Favorito"));
+
+        const btnDesfavoritar = document.createElement("button");
+        btnDesfavoritar.setAttribute("class", "btnDesfavoritar");
+        btnDesfavoritar.setAttribute("id", "btnDesfavoritar");
+        btnDesfavoritar.appendChild(document.createTextNode("Desfavoritar"));
 
         divAno.appendChild(document.createTextNode(this.ano));
         divGenero.appendChild(document.createTextNode(this.genero));
@@ -166,7 +168,9 @@ class Filme{
         divDetalhes.appendChild(divElenco);
         divDetalhes.appendChild(divSinopse);
         divDetalhes.appendChild(divAvaliacao);
-        divDetalhes.appendChild(btnFavorito);
+
+        divButtons.appendChild(btnFavorito);
+        divButtons.appendChild(btnDesfavoritar);
 
         cardDetalhes.appendChild(imgDetalhes);
         cardDetalhes.appendChild(cardBodyDetalhes);
@@ -176,6 +180,7 @@ class Filme{
 
         cardBodyDetalhes.appendChild(divCabecalho);
         cardBodyDetalhes.appendChild(divDetalhes);
+        cardBodyDetalhes.appendChild(divButtons);
 
 
         return cardDetalhes;
