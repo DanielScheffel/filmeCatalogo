@@ -71,9 +71,9 @@ const detalhesFilme = async (id) => {
             filmesFavorito(filme);
         }
 
-        //document.querySelector("#btnDesfavoritar").onclick = () => {
-        //    excluirFilme(filme);
-        //}
+        document.querySelector("#btnDesfavoritar").onclick = () => {
+            excluirFilme(filme);
+        }
     
     });
 }
@@ -101,11 +101,22 @@ const listarFilmes = async (filmes) => {
 
 let filmesFavorito = (filme) => {
 
-    let filmesString = localStorage.getItem('filmesFavoritos');
+    let filmeString = localStorage.getItem('filmesFavoritos');
 
-    var filmes = JSON.parse(filmesString);
+    let filmes = null;
 
-    filmes.push(filme);
+    if(filmeString){
+
+        filmes = JSON.parse(filmeString);
+
+        filmes.push(filme);
+
+    }
+    else{
+
+        filmes = [filme];
+
+    }
 
     filmes = JSON.stringify(filmes);
 
@@ -115,14 +126,14 @@ let filmesFavorito = (filme) => {
 
 }
 
-let listarFavoritos = () => {
-    let filmesFavoritos = localStorage.getItem('filmesFavoritos');
-    filmesFavoritos = JSON.parse(filmesFavoritos);
-    if(filmesFavoritos == null)
-    filmesFavoritos = [];
+const listaFavoritos = () => {
+
+    let filmeSalvo = localStorage.getItem('filmesFavoritos');
+    filmeSalvo = JSON.parse(filmeSalvo);
     let filmes = new Array();
-    //console.log(filmesFavorito);
-    filmesFavoritos.forEach((item) => {
+    //console.log(filmeSalvo);
+    filmeSalvo.forEach((item) => {
+        //console.log(item);
         let filme = new Filme(
             item.id,
             item.titulo,
@@ -136,11 +147,53 @@ let listarFavoritos = () => {
             null,
             null
         );
+
         filmes.push(filme);
+
     });
+
     listarFilmes(filmes);
+
 }
 
 navFavoritos.onclick = () => {
-    listarFavoritos();
+
+    listaFavoritos();
+
 }
+
+const excluirFilme = (id) => {
+
+    let filmeSalvo = JSON.parse(localStorage.getItem('filmesFavoritos'));
+
+    let Id = (filme) => filme.id == id;
+
+    let excluir = filmeSalvo.find(Id);
+
+    filmeSalvo.splice(excluir, 1);
+
+    localStorage.setItem('filmesFavoritos', JSON.stringify(filmeSalvo));
+
+    listaFavoritos();
+}
+
+
+// SIMPLES TESTE DE EDITAR
+
+/*const editarFilme = (id, titulo, ano, genero, duracao, sinopse, cartaz) => {
+
+    let filmeSalvo = JSON.parse(localStorage.getItem('filmesFavoritos'))
+        .filter(item => item.Id !== id);
+    
+    filmeSalvo.push({
+        Title: titulo,
+        Year: ano,
+        Genre: genero,
+        Runtine: duracao,
+        Plot: sinopse,
+        Poster: cartaz
+    });
+
+    localStorage.setItem('filmesFavoritos', JSON.stringify(filmeSalvo));
+
+}*/
